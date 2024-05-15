@@ -117,6 +117,22 @@ df_chartlabel_for_regions <- df_out %>%
 
 ## plot the COACCH damage function by region
 
+# set ggplot2 theme
+mytheme <- theme_classic() + theme(legend.position = "bottom",
+                                   axis.text = element_text(size = 5),
+                                   axis.title = element_text(size = 5),
+                                   legend.text = element_text(size = 5),
+                                   legend.title = element_text(size = 5),
+                                   legend.key.height = unit(0.3, 'cm'),
+                                   legend.key.width = unit(0.3, 'cm'),
+                                   legend.margin=margin(0, 0, 0, 0, "cm"),
+                                   axis.line = element_line(linewidth = 0.3),
+                                   axis.ticks = element_line(linewidth = 0.3),
+                                   strip.text = element_text(size = 5),
+                                   strip.background = element_blank())
+
+theme_set(mytheme)
+
 # create a tibble with global mean temperature increases from the COACCH baseline to +7C, in steps of 0.1C
 crossing(temp = seq(coacch_baseline_temperature, 7, by = 0.1),
          df_out %>% select(coacchregion, no_slr_b1, no_slr_b2)) %>%
