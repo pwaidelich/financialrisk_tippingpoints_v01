@@ -4,6 +4,7 @@ rm(list = ls())
 # load packages
 library(tidyverse)
 library(janitor)
+library(readxl)
 
 # map the baseline temperature for the COACCH damage function (calculated in 'Berkeley Earth GWL Calculation.xlsx')
 # for background information on the COACCH baseline temperature, see Supplementary Note 1
